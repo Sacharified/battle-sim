@@ -1,0 +1,21 @@
+{%extend layouts/modal as content%}
+<form id="character-create">
+    <h3 class="header">{{ msg }}</h3>
+    
+    <div class="form-field">
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+    </div>
+    <div class="form-field">
+        <label for="class">Class: </label>
+        <select name="class" id="class-select">
+            <option value="warrior">warrior</option>
+            <option value="mage">mage</option>
+            <option value="streetwalker">streetwalker</option>
+        </select>
+    </div>
+    <div class="form-field">
+        <button type="submit" class="js-submit">create</button>
+    </div>
+</form>
+{%endextend%}

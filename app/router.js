@@ -7,12 +7,14 @@ const routes = {
 
 // Defining the application router.
 class Router extends Backbone.Router {
-  constructor() {
+  constructor(app) {
     super({ routes });
+    console.log(app);
   }
 
   index() {
-    new HomePage({ el: 'main' }).render();
+    console.log('index');
+    App.Views.Home.show();
   }
 }
 

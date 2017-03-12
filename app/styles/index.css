@@ -3,91 +3,36 @@
 
 /*-- Application stylesheets. -----------------------------------------------*/
 
+html {
+    background: rgba(0, 0, 0, 0.3);
+}
+
 html, body {
-  position: relative;
-  height: 100%;
+    height: 100%;
+    position: relative;
 }
 
-main {
-  position: relative;
-  height: 100%;
-  margin: 0 auto;
-  background-color: #FFF;
+.modal {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    border-radius: 3px;
+    max-width: calc(100% - 20px);
 }
 
-section.content {
-  padding-top: 26px;
-  width: 95%;
-  padding-left: calc(15% + 288px);
-  box-sizing: border-box;
+.modal-content {
+    padding: 10px;
 }
 
-section.content h2 {
-  background-color: #E0E0E0;
-  padding: 25px;
-  margin-top: 159px;
-  height: 83px;
-  color: #616161;
-  font-variant: small-caps;
-  font-size: 41px;
-  padding-top: 10px;
-  width: 594px;
-  font-weight: bold;
+.form-field {
+    display: block;
+    margin-bottom: 10px;
 }
 
-nav {
-  background-color: #333;
-  height: 100%;
-  width: 288px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  padding-left: 15%;
-}
-
-nav h1 {
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  text-align: right;
-  background-color: #4A86C1;
-  margin: 0;
-  padding: 15px;
-  padding-left: 30px;
-}
-
-nav hr {
-  border-bottom-color: #4A86C1;
-  border-top-width: 0;
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-
-nav a {
-  color: #FFF;
-  text-align: right;
-  display: block;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 19px;
-  padding: 15px;
-}
-
-nav a:not(:last-child) {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
-}
-
-nav a:hover {
-  background: #4A86C1;
-}
-
-nav .header {
-  height: 185px;
-	background: #333 url(../img/logo.png) no-repeat 34px 33px;
-}
-
-header {
-  height: 185px;
-  margin-left: 300px;
+input[type="text"], input[type="submit"], select {
 }

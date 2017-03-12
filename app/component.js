@@ -29,6 +29,8 @@ class Component extends LayoutManager {
     this.listenTo(this, 'afterRender', function() {
       Component.activateAll(this);
     });
+    console.log(this);
+    
   }
 
   // Allow function templates to pass through.
@@ -44,6 +46,14 @@ class Component extends LayoutManager {
 
   serialize() {
     return this.dataset;
+  }
+  
+  show() {
+    this.$el.show();
+  }
+
+  hide() {
+    this.$el.hide();
   }
 
   static register(identifier, ctor) {

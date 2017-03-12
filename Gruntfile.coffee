@@ -5,7 +5,6 @@ module.exports = ->
 
   # Run JSHint and a quick test.
   @registerTask "test", [
-    "jshint"
     "browserify:testing"
     "karma:run"
   ]
@@ -13,7 +12,6 @@ module.exports = ->
   # During development: lint the code, build out the development bundle, run
   # the connect server, and watch for changes.
   @registerTask "development", [
-    "jshint"
     "browserify:development"
     "browserify:testing"
     "connect:development"
@@ -23,7 +21,6 @@ module.exports = ->
   # During production: lint, build out assets, and run tests.
   @registerTask "production", [
     "clean"
-    "jshint"
     "browserify:production"
     "browserify:testing"
     "processhtml"
