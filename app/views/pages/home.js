@@ -27,7 +27,7 @@ export default Backbone.View.extend({
         this.$el.append(this.characterCreateModal.render().$el);
         this.characterCreateModal.setChar({
             name: 'dev',
-            class: 'streetwalker'
+            class: 'god'
         });
         return this;
     },

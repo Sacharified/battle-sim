@@ -11,7 +11,7 @@ var Character = Backbone.Model.extend({
     },
     
     initialize: function(options) {
-        Character.__super__.initialize.call(this, options);
+        Character.__super__.initialize.apply(this, arguments);
         this.on('change:name', () => console.log(this));
     }
 });

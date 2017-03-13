@@ -16,7 +16,7 @@ Backbone.history.start({ pushState: true, root: '/' });
 
 App = new AppModel();
 App.Views.Home = new HomePageView();
- 
+
 var $container = $('#main');
 $container.html(App.Views.Home.render().$el);
 
