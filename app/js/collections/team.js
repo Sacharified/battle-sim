@@ -3,6 +3,7 @@ import Character from '../models/player';
 
 var TeamCollection = Backbone.Collection.extend({
     model: Character,
+    comparator: 'team',
     
     initialize: function(models, options) {
         TeamCollection.__super__.initialize.apply(this, arguments);

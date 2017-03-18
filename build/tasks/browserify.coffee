@@ -6,7 +6,7 @@ module.exports = ->
   @config 'browserify',
     options:
       transform: [
-        ['combynify', root: './app/views']
+        ['combynify', root: './app/js/views']
         'babelify'
       ]
       watch: true
@@ -16,17 +16,17 @@ module.exports = ->
         browserifyOptions:
           debug: true
 
-      src: 'app/index.js'
-      dest: 'dist/source.js'
+      src: 'app/js/index.js'
+      dest: 'dist/js/source.js'
 
     production:
       options:
         configure: (bundler) ->
           bundler.transform(global: true, 'uglifyify')
 
-      src: 'app/index.js'
-      dest: 'dist/source.min.js'
+      src: 'app/js/index.js'
+      dest: 'dist/js/source.min.js'
 
     testing:
       src: 'test/runner.js'
-      dest: 'dist/test-runner.js'
+      dest: 'dist/js/test-runner.js'

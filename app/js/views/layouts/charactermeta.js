@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
-import template from './charactermeta.html';
+import template from '../templates/layouts/charactermeta.html';
 
 var CharacterMetaView = Backbone.View.extend({
     template,

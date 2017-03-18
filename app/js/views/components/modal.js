@@ -1,5 +1,5 @@
 import Component from '../../component';
-import template from '../layouts/modal.html';
+import template from '../templates/components/modal.html';
 
 const ModalView = Component.extend({
   template,
@@ -13,4 +13,4 @@ const ModalView = Component.extend({
   }
 });
 
-export default Component.register('modal-view', ModalView);
+export default ModalView;

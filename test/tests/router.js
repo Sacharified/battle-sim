@@ -1,5 +1,5 @@
 import Backbone from 'backbone';
-import Router from '../../app/router';
+import Router from '../../app/js/router';
 
 // Test that the Router exists.
 describe("Router", function() {

@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
-import template from './charactercreate.html';
+import template from '../templates/forms/charactercreate.html';
 import PlayerModel from '../../models/player';
 import Component from '../../component';
 

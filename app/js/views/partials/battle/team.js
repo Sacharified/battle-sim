@@ -2,12 +2,17 @@ import Backbone from 'backbone';
 import CharacterView from './character';
 
 var TeamView = Backbone.View.extend({
-    comparator: 'team',
     className: 'battle-team',
     
     initialize: function(options) {
         this.collection = options.team;
         this.charViews = new Map();
+    },
+    
+    render: () => {
+        this.$el.html('<ul class="team-list js-team-list"></ul>');
+        this.renderChars();
+        return this;
     },
     
     getTeam: function(id) {
@@ -22,7 +27,7 @@ var TeamView = Backbone.View.extend({
     
     renderChar: function(model) {
         let charTeam = model.get('team');
-        let $teamList = this.$('.team-list[data-team-id=' + charTeam + ']');
+        let $teamList = this.$('.team-list');
         let charView = new CharacterView({ model: model });
         this.charViews.add(model.id, charView);
         
