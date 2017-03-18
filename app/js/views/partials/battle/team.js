@@ -5,11 +5,13 @@ var TeamView = Backbone.View.extend({
     className: 'battle-team',
     
     initialize: function(options) {
+        TeamView.__super__.initialize.apply(this, arguments);
+        
         this.collection = options.team;
         this.charViews = new Map();
     },
     
-    render: () => {
+    render: function() {
         this.$el.html('<ul class="team-list js-team-list"></ul>');
         this.renderChars();
         return this;
@@ -20,7 +22,7 @@ var TeamView = Backbone.View.extend({
     },
     
     renderChars: function() {
-        this.team.each((character, index, collection) => {
+        this.collection.each((character, index, collection) => {
             this.renderChar(character);
         });
     },
@@ -29,7 +31,7 @@ var TeamView = Backbone.View.extend({
         let charTeam = model.get('team');
         let $teamList = this.$('.team-list');
         let charView = new CharacterView({ model: model });
-        this.charViews.add(model.id, charView);
+        this.charViews.set(model.id, charView);
         
         $teamList.append(charView.render.$el);
     }
