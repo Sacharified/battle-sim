@@ -9,12 +9,13 @@ module.exports = ->
         spawn: false
         livereload: true
 
-      tasks: ['jshint']
+      tasks: ['browserify:development', 'sass:development']
 
       files: [
         'dist/source.js'
         'dist/test-runner.js'
-        'app/styles/**/*.css'
+        'app/js/**/*.js'
+        'app/styles/**/*.scss'
         'index.html'
         'package.json'
       ]

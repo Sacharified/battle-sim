@@ -12,6 +12,7 @@ var Battle = Scene.extend({
         this.teamTwo = options.teams.two;
         this.teams = [this.teamOne, this.teamTwo];
         this.teamViews = new Map();
+        this.className += ' battle-scene';
         
         _.bindAll(this, 'renderTeams');
     },
@@ -27,14 +28,16 @@ var Battle = Scene.extend({
     },
     
     renderTeams: function() {
+        console.log(this.teams);
         this.teams.forEach(function(team, index) {
-            var teamView = new TeamView({
-                team: team
+            console
+            let teamId = team.at(0).get('team');
+            let teamView = new TeamView({
+                team: team,
+                teamId: teamId
             });
-            var team = index + 1;
-            console.log(this);
+            console.log(teamId);
             this.teamViews.set(team, teamView);
-            console.log(this.$sceneContainer);
             this.$('.scene-container').append(teamView.render().$el);
         }, this);
     },

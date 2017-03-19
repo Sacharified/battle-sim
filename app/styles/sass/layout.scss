@@ -1,0 +1,40 @@
+@import 'vendor/meyer-reset';
+
+@import 'partials/variables/colors';
+@import 'partials/value-bar';
+@import 'partials/inputs';
+
+@import 'modules/modal';
+@import 'modules/scene';
+@import 'modules/scenes/battle/character';
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/*-- Application stylesheets. -----------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+html, body {
+    font-family: 'Roboto', Arial, sans-serif;
+    
+    height: 100%;
+    position: relative;
+}
+
+#main {
+    padding: 20px;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}

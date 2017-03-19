@@ -1,0 +1,43 @@
+<div class="battle-character js-character">
+    <div class="character-header">
+        <div class="sprite">
+            <img class="sprite-image" width="50" src="{{ character.image }}" alt="{{ character.name }}">
+        </div>
+        <h3 class="meta-name">
+            {{ character.name }}
+            <div class="hp-bar js-hp-bar">
+            </div>
+        </h3>
+    </div>
+    <div class="character-body">
+        <div class="character-meta">
+            <div class="meta-item meta-class">
+                {{ character.class }}
+            </div>
+        </div>
+        <div class="character-actions">
+            <ul class="actions-list js-actions-list">
+                <li class="action-item js-action">
+                    <button class="js-attack-btn">
+                        Attack
+                    </button>
+                </li>
+                <li class="action-item js-action">
+                    <button class="js-skip-btn">
+                        Block
+                    </button>
+                </li>
+                <li class="action-item js-action">
+                    <button class="js-item-btn">
+                        Item
+                    </button>
+                </li>
+                <li class="action-item js-action">
+                    <button class="js-skip-btn">
+                        Skip
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

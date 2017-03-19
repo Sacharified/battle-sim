@@ -1,0 +1,17 @@
+.scene {
+    width: 800px;
+    max-width: 100%;
+    border: 1px solid black;
+    height: 500px;
+    margin-bottom: 20px;
+    
+    .scene-inner {
+        height: 100%;
+    }
+    
+    .scene-container {
+        display: flex;
+        height: 100%;
+    }
+}
+

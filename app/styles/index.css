@@ -1,50 +1,202 @@
-@import '../../node_modules/purecss/build/pure.css';
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-/*-- Application stylesheets. -----------------------------------------------*/
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
 
-html {
-    background: rgba(0, 0, 0, 0.3);
-}
+body {
+  line-height: 1; }
 
-html, body {
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.value-bar {
+  height: 5px;
+  width: 100%; }
+  .value-bar .child-bar {
     height: 100%;
-    position: relative;
-}
-
-#main {
-    padding: 20px;
-}
-
-.modal {
-    z-index: 100;
+    width: 100%;
+    position: absolute; }
+  .value-bar .bar-max-value {
+    background-color: white; }
+  .value-bar .bar-current-value {
+    background-color: #75bd75; }
+  .value-bar .current-value-number {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid black;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-    width: 600px;
-    border-radius: 3px;
-    max-width: 100%;
-}
-
-.modal-content {
-    padding: 10px;
-}
+    left: 5px;
+    bottom: 0px;
+    font-size: 14px; }
 
 .form-field {
-    display: block;
-    margin-bottom: 10px;
-}
+  display: block;
+  margin-bottom: 10px; }
 
-input[type="text"], input[type="submit"], select {
-}
+.modal {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  width: 600px;
+  border-radius: 3px;
+  max-width: 100%; }
+  .modal .modal-content {
+    padding: 10px; }
 
 .scene {
-    width: 800px;
-    max-width: 100%;
-    border: 1px solid black;
-    height: 500px;
-    margin-bottom: 20px;
-}
+  width: 800px;
+  max-width: 100%;
+  border: 1px solid black;
+  height: 500px;
+  margin-bottom: 20px; }
+  .scene .scene-inner {
+    height: 100%; }
+  .scene .scene-container {
+    display: flex;
+    height: 100%; }
+
+.battle-team {
+  height: 100%;
+  width: 50%;
+  background: white; }
+  .battle-team:first-of-type {
+    border-right: 1px solid black; }
+  .battle-team .team-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .battle-team .team-list[data-team="1"] .team-item {
+      background-color: #b93333; }
+    .battle-team .team-list[data-team="2"] .team-item {
+      background-color: #2562a0; }
+  .battle-team .team-item {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex: 1 0 auto; }
+    .battle-team .team-item:not(:last-of-type) {
+      border-bottom: 1px solid black; }
+    .battle-team .team-item .battle-character {
+      height: calc(33.33% - 20px); }
+      .battle-team .team-item .battle-character .character-header {
+        display: flex;
+        height: 56.25px;
+        position: relative; }
+        .battle-team .team-item .battle-character .character-header .sprite {
+          height: 56.25px; }
+          .battle-team .team-item .battle-character .character-header .sprite .sprite-image {
+            width: 75px;
+            height: 56.25px;
+            height: auto; }
+        .battle-team .team-item .battle-character .character-header .meta-name {
+          height: 56.25px;
+          font-size: 20px;
+          text-transform: uppercase;
+          font-weight: 900;
+          color: white;
+          line-height: 30px;
+          flex: 1 0 auto;
+          padding: 10px;
+          text-align: right;
+          height: 56.25px;
+          position: relative; }
+        .battle-team .team-item .battle-character .character-header .hp-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0; }
+      .battle-team .team-item .battle-character .character-body {
+        display: flex;
+        height: 110px;
+        overflow: auto; }
+        .battle-team .team-item .battle-character .character-body .character-meta {
+          padding: 10px;
+          height: 100%;
+          width: 96px;
+          word-wrap: break-word;
+          overflow: hidden;
+          max-width: 96px; }
+        .battle-team .team-item .battle-character .character-body .character-actions {
+          width: 100%; }
+          .battle-team .team-item .battle-character .character-body .character-actions .actions-list {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap; }
+            .battle-team .team-item .battle-character .character-body .character-actions .actions-list .action-item {
+              width: 50%;
+              height: 50%;
+              display: inline-block; }
+              .battle-team .team-item .battle-character .character-body .character-actions .actions-list .action-item button {
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.1);
+                border: none;
+                text-transform: uppercase;
+                color: white;
+                padding: 0;
+                font-size: 12px;
+                transition: background 330ms ease;
+                cursor: pointer; }
+                .battle-team .team-item .battle-character .character-body .character-actions .actions-list .action-item button:hover {
+                  background: rgba(0, 0, 0, 0.3); }
+
+/*-- Application stylesheets. -----------------------------------------------*/
+* {
+  box-sizing: border-box; }
+
+html {
+  background: rgba(0, 0, 0, 0.2); }
+
+html, body {
+  font-family: 'Roboto', Arial, sans-serif;
+  height: 100%;
+  position: relative; }
+
+#main {
+  padding: 20px; }
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block; }

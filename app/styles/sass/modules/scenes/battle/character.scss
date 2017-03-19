@@ -1,0 +1,131 @@
+$character-header-height: 56.25px;
+
+.battle-team {
+    height: 100%;
+    width: 50%;
+    background: white;
+    
+    &:first-of-type {
+        border-right: 1px solid black;
+    }
+
+    .team-list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+        &[data-team="1"] {
+            .team-item {
+                background-color: $red;
+            }
+        }
+        
+        &[data-team="2"] {
+            .team-item {
+                background-color: $blue;
+            }
+        }
+    }
+    
+    .team-item {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex: 1 0 auto;
+        
+        &:not(:last-of-type) {
+            border-bottom: 1px solid black;
+        }
+        
+        .battle-character {
+            height: calc(33.33% - 20px);
+            
+            .character-header {
+                display: flex;
+                height: $character-header-height;
+                position: relative;
+                
+                .sprite {
+                    height: $character-header-height;
+                        
+                    .sprite-image {
+                        width: 75px;
+                        height: $character-header-height;
+                        height: auto;
+                    }
+                }
+                
+                .meta-name {
+                    height: 56.25px;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    color: white;
+                    line-height: 30px;
+                    flex: 1 0 auto;
+                    padding: 10px;
+                    text-align: right;
+                    height: $character-header-height;
+                    position: relative;
+                }
+                
+                .hp-bar {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            
+            .character-body {
+                display: flex;
+                height: 110px;
+                overflow: auto;
+                
+                .character-meta {
+                    padding: 10px;
+                    height: 100%;
+                    width: 96px;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    max-width: 96px;
+                }
+                
+                .character-actions {
+                    width: 100%;
+                    
+                    .actions-list {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        
+                        .action-item {
+                            width: 50%;
+                            height: 50%;
+                            display: inline-block;
+                            
+                            button {
+                                width: 100%;
+                                height: 100%;
+                                background: rgba(0,0,0,0.1);
+                                border: none;
+                                text-transform: uppercase;
+                                color: white;
+                                padding: 0;
+                                font-size: 12px;
+                                transition: background 330ms ease;
+                                cursor: pointer;
+                                
+                                &:hover {
+                                    background: rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

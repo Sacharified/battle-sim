@@ -1,0 +1,25 @@
+.value-bar {
+    height: 5px;
+    width: 100%;
+    
+    .child-bar {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    
+    .bar-max-value {
+        background-color: white;
+    }
+    
+    .bar-current-value {
+        background-color: $green;
+    }
+    
+    .current-value-number {
+        position: absolute;
+        left: 5px;
+        bottom: 0px;
+        font-size: 14px;
+    }
+}

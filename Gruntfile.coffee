@@ -13,6 +13,7 @@ module.exports = ->
   # the connect server, and watch for changes.
   @registerTask "development", [
     "browserify:development"
+    "sass:development"
     "browserify:testing"
     "connect:development"
     "watch"

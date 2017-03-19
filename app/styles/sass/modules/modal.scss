@@ -1,0 +1,16 @@
+.modal {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    border-radius: 3px;
+    max-width: 100%;
+    
+    .modal-content {
+        padding: 10px;
+    }
+}

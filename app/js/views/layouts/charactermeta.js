@@ -5,9 +5,7 @@ import template from '../templates/layouts/charactermeta.html';
 var CharacterMetaView = Backbone.View.extend({
     template,
     
-    initialize: function(options) {
-        this.model = options.model;
-        
+    initialize: function(options) {        
         _.bindAll(this, 'render');
         this.model.on('change', this.render);
     },

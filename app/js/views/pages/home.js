@@ -27,7 +27,11 @@ export default Backbone.View.extend({
         this.$el.append(this.characterCreateModal.render().$el);
         this.characterCreateModal.setChar({
             name: 'dev',
-            class: 'god'
+            class: 'god',
+            hp: 100,
+            maxHp: 100,
+            team: 1,
+            image: '../../../app/img/avatars/trex.png'
         });
         return this;
     },
@@ -39,9 +43,55 @@ export default Backbone.View.extend({
         this.playerMetaView = new CharacterMetaView({ model: App.Models.Player });
         this.$el.append(this.playerMetaView.render().$el);
         
-        var team1 = new TeamCollection([App.Models.Player]);
-        var team2 = new TeamCollection();
-        this.createScene('battle', { teams: { 'one' : team1, 'two' : team2 } });
+        var teams = {
+            
+            one: new TeamCollection([
+                App.Models.Player,
+                {
+                    name: 'trumpet',
+                    class: 'baron',
+                    hp: 100,
+                    maxHp: 100,
+                    team: 1,
+                    image: 'app/img/avatars/trumpet.png'
+                },
+                {
+                    name: 'putato',
+                    class: 'mage',
+                    hp: 100,
+                    maxHp: 100,
+                    team: 1,
+                    image: 'app/img/avatars/putato.png'
+                }
+            ], { parse: true }),
+            two: new TeamCollection([
+                {
+                    name: 'william',
+                    class: 'tech',
+                    hp: 100,
+                    maxHp: 100,
+                    team: 2,
+                    image: 'app/img/avatars/bullgates.png'
+                },
+                {
+                    name: 'papa bless',
+                    class: 'mage',
+                    hp: 100,
+                    maxHp: 100,
+                    team: 2,
+                    image: 'app/img/avatars/vapenaysh.png'
+                },
+                {
+                    name: 'georgie-boy',
+                    class: 'dwarf',
+                    hp: 100,
+                    maxHp: 100,
+                    team: 2,
+                    image: 'app/img/avatars/costanza.png'
+                }
+            ], { parse: true })
+        }
+        this.createScene('battle', { teams: teams });
     },
     
     createScene: function(sceneType, data) {
